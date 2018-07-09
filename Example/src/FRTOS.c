@@ -26,8 +26,12 @@
 #define ON			((uint8_t) 1)
 #define OFF			((uint8_t) 0)
 #define DEBUGOUT(...) printf(__VA_ARGS__)
-#define TICKRATE_HZ1 (40000*2)	// 4: cte de frec - 2 ticks por segundo (cada 500ms)
-#define TICKRATE_HZ2 (40000*1)	// 4: cte de frec - 1 tick por segundo	(cada 1000ms)
+#define FREC_TIMER	4	//Frec del timer es la cuarta parte del clock: 96000000/4 - NO CAMBIAR
+#define FREC_MATCH0	80	//Cant de veces que interrumpe por seg el match0
+#define FREC_MATCH1	40	//Cant de veces que interrumpe por seg el match1
+#define TICKRATE_HZ1 (FREC_TIMER*FREC_MATCH0)	// 4: cte de frec - 2 ticks por segundo (cada 500ms)
+#define TICKRATE_HZ2 (FREC_TIMER*FREC_MATCH1)	// 4: cte de frec - 1 tick por segundo	(cada 1000ms)
+
 
 //Placa Infotronic
 #define LED_STICK	PORT(0),PIN(22)
@@ -264,7 +268,7 @@ static void vTaskInicTimer(void *pvParameters)
 */
 static void xTaskMatch0(void *pvParameters)
 {
-	uint32_t Ticks_Hz_Match0 = 80000;	//El PWM inicializa al 50%
+	uint32_t Ticks_Hz_Match0 = 160;	//El PWM inicializa al 50%
 	uint8_t Receive=0;
 	uint32_t timerFreq;
 
@@ -275,9 +279,9 @@ static void xTaskMatch0(void *pvParameters)
 		switch(Receive)
 		{
 			case 1:
-				if(Ticks_Hz_Match0>=80000)
+				if(Ticks_Hz_Match0>=60)
 				{
-					Ticks_Hz_Match0=Ticks_Hz_Match0-40000;	//Incrementa el duty, va a dar cualquier porcentaje
+					Ticks_Hz_Match0=Ticks_Hz_Match0-500;	//Incrementa el duty, va a dar cualquier porcentaje
 					timerFreq = Chip_Clock_GetSystemClockRate();	//Obtiene la frecuencia a la que esta corriendo el uC
 					Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timerFreq / Ticks_Hz_Match0));	//Le cambia el valor al match
 					Receive=0;										//Reestablece la variable
@@ -285,9 +289,9 @@ static void xTaskMatch0(void *pvParameters)
 			break;
 
 			case 2:
-				if(Ticks_Hz_Match0<=1200000)
+				if(Ticks_Hz_Match0<=300)
 				{
-					Ticks_Hz_Match0=Ticks_Hz_Match0+40000;	//Incrementa el duty, va a dar cualquier porcentaje
+					Ticks_Hz_Match0=Ticks_Hz_Match0+500;	//Incrementa el duty, va a dar cualquier porcentaje
 					timerFreq = Chip_Clock_GetSystemClockRate();	//Obtiene la frecuencia a la que esta corriendo el uC
 					Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timerFreq / Ticks_Hz_Match0));	//Le cambia el valor al match
 					Receive=0;										//Reestablece la variable
