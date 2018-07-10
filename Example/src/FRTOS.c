@@ -26,9 +26,10 @@
 #define ON			((uint8_t) 1)
 #define OFF			((uint8_t) 0)
 #define DEBUGOUT(...) printf(__VA_ARGS__)
+
 #define FREC_TIMER	4	//Frec del timer es la cuarta parte del clock: 96000000/4 - NO CAMBIAR
-#define FREC_MATCH0	80	//Cant de veces que interrumpe por seg el match0
-#define FREC_MATCH1	40	//Cant de veces que interrumpe por seg el match1
+#define FREC_MATCH0	200	//Cant de veces que interrumpe por seg el match0
+#define FREC_MATCH1	100	//Cant de veces que interrumpe por seg el match1
 #define TICKRATE_HZ1 (FREC_TIMER*FREC_MATCH0)	// 4: cte de frec - 2 ticks por segundo (cada 500ms)
 #define TICKRATE_HZ2 (FREC_TIMER*FREC_MATCH1)	// 4: cte de frec - 1 tick por segundo	(cada 1000ms)
 
@@ -139,7 +140,7 @@ static void xTaskPWM(void *pvParameters)
 	while (1)
 	{
 		xSemaphoreTake(Semaforo_1, portMAX_DELAY);
-		Chip_GPIO_SetPinToggle(LPC_GPIO,LED3);
+		Chip_GPIO_SetPinToggle(LPC_GPIO,RGBR);
 	}
 	vTaskDelete(NULL);	//Borra la tarea si sale del while 1
 }
@@ -268,9 +269,10 @@ static void vTaskInicTimer(void *pvParameters)
 */
 static void xTaskMatch0(void *pvParameters)
 {
-	uint32_t Ticks_Hz_Match0 = 160;	//El PWM inicializa al 50%
 	uint8_t Receive=0;
 	uint32_t timerFreq;
+	uint32_t Duty_cycle = 50;					//El duty inicializa al 50%
+	uint32_t Valor_Match=(10000/Duty_cycle);
 
 	while (1)
 	{
@@ -279,23 +281,29 @@ static void xTaskMatch0(void *pvParameters)
 		switch(Receive)
 		{
 			case 1:
-				if(Ticks_Hz_Match0>=60)
+				if(Duty_cycle>10)
 				{
-					Ticks_Hz_Match0=Ticks_Hz_Match0-500;	//Incrementa el duty, va a dar cualquier porcentaje
+					Duty_cycle=Duty_cycle-10;	//Incrementa el duty
 					timerFreq = Chip_Clock_GetSystemClockRate();	//Obtiene la frecuencia a la que esta corriendo el uC
-					Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timerFreq / Ticks_Hz_Match0));	//Le cambia el valor al match
-					Receive=0;										//Reestablece la variable
+					Valor_Match=(10000/Duty_cycle);
+					Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timerFreq / (FREC_TIMER*Valor_Match)));	//Le cambia el valor al match
+					Receive=0;					//Reestablece la variable
 				}
+				else							//En caso de que se pierda la variable
+					Duty_cycle=10;
 			break;
 
 			case 2:
-				if(Ticks_Hz_Match0<=300)
+				if(Duty_cycle<90)
 				{
-					Ticks_Hz_Match0=Ticks_Hz_Match0+500;	//Incrementa el duty, va a dar cualquier porcentaje
+					Duty_cycle=Duty_cycle+10;	//Decrementa el duty
 					timerFreq = Chip_Clock_GetSystemClockRate();	//Obtiene la frecuencia a la que esta corriendo el uC
-					Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timerFreq / Ticks_Hz_Match0));	//Le cambia el valor al match
-					Receive=0;										//Reestablece la variable
+					Valor_Match=(10000/Duty_cycle);
+					Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timerFreq / (FREC_TIMER*Valor_Match)));	//Le cambia el valor al match
+					Receive=0;					//Reestablece la variable
 				}
+				else							//En caso de que se pierda la variable
+					Duty_cycle=90;
 			break;
 
 			default:
@@ -343,8 +351,8 @@ int main(void)
 	xSemaphoreTake(Semaforo_1, portMAX_DELAY);	//Tomamos el semaforo
 	//xSemaphoreTake(Semaforo_2, portMAX_DELAY);
 
-	Cola_1 = xQueueCreate(1, sizeof(uint32_t));	//Creamos una cola
-	Cola_2 = xQueueCreate(1, sizeof(uint32_t));	//Creamos una cola
+	Cola_1 = xQueueCreate(1, sizeof(uint32_t));	//Creamos una cola de un elemento
+	Cola_2 = xQueueCreate(1, sizeof(uint32_t));	//Creamos una cola de un elemento
 	//Creamos las tareas
 	xTaskCreate(vTaskLedRGB, (char *) "vTaskLedRGB",
 				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
