@@ -1,14 +1,14 @@
 freeRTOS/src/FreeRTOSCommonHooks.o freeRTOS/src/FreeRTOSCommonHooks.d: \
  ../freeRTOS/src/FreeRTOSCommonHooks.c \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/FreeRTOS.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\Example\inc/FreeRTOSConfig.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/projdefs.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/portable.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/deprecated_definitions.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/portmacro.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/mpu_wrappers.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/task.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/list.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/FreeRTOS.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/FreeRTOSConfig.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/projdefs.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/portable.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/deprecated_definitions.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/portmacro.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/mpu_wrappers.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/task.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/list.h \
  ../freeRTOS/src/FreeRTOSCommonHooks.h \
  C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/chip.h \
  C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/lpc_types.h \
@@ -48,23 +48,23 @@ freeRTOS/src/FreeRTOSCommonHooks.o freeRTOS/src/FreeRTOSCommonHooks.d: \
  C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/iap.h \
  C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/error.h
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/FreeRTOS.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/FreeRTOS.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\Example\inc/FreeRTOSConfig.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/FreeRTOSConfig.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/projdefs.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/projdefs.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/portable.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/portable.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/deprecated_definitions.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/deprecated_definitions.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/portmacro.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/portmacro.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/mpu_wrappers.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/mpu_wrappers.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/task.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/task.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/list.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/list.h:
 
 ../freeRTOS/src/FreeRTOSCommonHooks.h:
 

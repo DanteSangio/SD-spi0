@@ -17,14 +17,23 @@
 #include "queue.h"
 #include <cr_section_macros.h>
 
+//SD
+#include "fat32.h"
+#include "spi.h"
+#include "stdutils.h"
+#include "delay.h"
+#include "sdcard.h"
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Defines
 #define PORT(x) 	((uint8_t) x)
 #define PIN(x)		((uint8_t) x)
+/*
 #define OUTPUT		((uint8_t) 1)
 #define INPUT		((uint8_t) 0)
 #define ON			((uint8_t) 1)
 #define OFF			((uint8_t) 0)
+*/
 #define DEBUGOUT(...) printf(__VA_ARGS__)
 
 #define FREC_TIMER	4	//Frec del timer es la cuarta parte del clock: 96000000/4 - NO CAMBIAR
@@ -84,6 +93,26 @@
 #define SCK1			PORT(0),PIN(7)
 #define SSEL1			PORT(0),PIN(6)
 
+//UART
+#define UART_SELECTION 	LPC_UART1
+#define IRQ_SELECTION 	UART1_IRQn
+#define HANDLER_NAME 	UART1_IRQHandler
+#define TXD1	0,15	//TX UART1
+#define	RXD1	0,16	//RX UART1
+
+#define UART_SRB_SIZE 32	//S:Send - Transmit ring buffer size
+#define UART_RRB_SIZE 1024	//R:Receive - Receive ring buffer size
+
+
+//SD
+#define FILE_READ         '1'
+#define FILE_WRITE        '2'
+#define FILE_COPY         '3'
+#define FILE_DELETE       '4'
+#define FILE_LIST         '5'
+#define MEMORY_STATICS    '6'
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Variables globales
 
@@ -91,6 +120,9 @@ SemaphoreHandle_t Semaforo_1;
 //SemaphoreHandle_t Semaforo_2;
 QueueHandle_t Cola_1;
 QueueHandle_t Cola_2;
+
+STATIC RINGBUFF_T txring, rxring;	//Transmit and receive ring buffers
+static uint8_t rxbuff[UART_RRB_SIZE], txbuff[UART_SRB_SIZE];	//Transmit and receive buffers
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* uC_StartUp */
@@ -342,17 +374,79 @@ void TIMER0_IRQHandler(void)
 */
 int main(void)
 {
-	uC_StartUp ();
+    uint8_t returnStatus,sdcardType,option,i=0;
+    char ch,sourceFileName[12],destFileName[12];
+    char str[]={"Hello World, Writing data to SD CARD using 1789"};
+    fileConfig_st *srcFilePtr,*destFilePtr;
+    fileInfo fileList;
+    uint32_t totalMemory,freeMemory;
 
-	SystemCoreClockUpdate();
+    uC_StartUp ();
+    SystemCoreClockUpdate();
+    //SystemInit();
+
+
+	///////////////////////////////////////////////////////////////////
+	/* PARA COMPROBAR SI LA SD ESTA CONECTADA */
+
+    do //if(returnStatus)
+    {
+        returnStatus = SD_Init(&sdcardType);
+        if(returnStatus == SDCARD_NOT_DETECTED)
+        {
+        	DEBUGOUT("\n\r SD card not detected..");
+        }
+        else if(returnStatus == SDCARD_INIT_FAILED)
+        {
+        	DEBUGOUT("\n\r Card Initialization failed..");
+        }
+        else if(returnStatus == SDCARD_FAT_INVALID)
+        {
+        	DEBUGOUT("\n\r Invalid Fat filesystem");
+        }
+    }while(returnStatus!=0);
+
+    DEBUGOUT("\n\rSD Card Detected!");
+	///////////////////////////////////////////////////////////////////
+
+
+	///////////////////////////////////////////////////////////////////
+    /* PARA ESCRIBIR ARCHIVO */
+    srcFilePtr = FILE_Open("datalog.txt",WRITE,&returnStatus);
+    if(srcFilePtr == 0)
+    {
+    	DEBUGOUT("\n\rFile Opening Failed");
+    }
+    else
+    {
+    	DEBUGOUT("\n\rEscribiendo la SD..");
+    	/*
+    	FILE_PutCh(srcFilePtr,'H');
+    	FILE_PutCh(srcFilePtr,'O');
+    	FILE_PutCh(srcFilePtr,'L');
+    	FILE_PutCh(srcFilePtr,'A');
+    	FILE_PutCh(srcFilePtr,';');
+    	*/
+    	while(str[i])
+		{
+		   FILE_PutCh(srcFilePtr,str[i++]);
+		}
+        FILE_PutCh(srcFilePtr,EOF);
+
+        FILE_Close(srcFilePtr);
+        DEBUGOUT("\n\rData saved to file, closing the file.");
+    }
+	///////////////////////////////////////////////////////////////////
+
+
+	//SystemCoreClockUpdate();
 
 	vSemaphoreCreateBinary(Semaforo_1);			//Creamos el semaforo
-	//vSemaphoreCreateBinary(Semaforo_2);
 	xSemaphoreTake(Semaforo_1, portMAX_DELAY);	//Tomamos el semaforo
-	//xSemaphoreTake(Semaforo_2, portMAX_DELAY);
 
 	Cola_1 = xQueueCreate(1, sizeof(uint32_t));	//Creamos una cola de un elemento
 	Cola_2 = xQueueCreate(1, sizeof(uint32_t));	//Creamos una cola de un elemento
+
 	//Creamos las tareas
 	xTaskCreate(vTaskLedRGB, (char *) "vTaskLedRGB",
 				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),

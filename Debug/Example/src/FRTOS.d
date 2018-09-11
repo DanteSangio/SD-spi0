@@ -36,18 +36,24 @@ Example/src/FRTOS.o Example/src/FRTOS.d: ../Example/src/FRTOS.c \
  C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/romapi_17xx_40xx.h \
  C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/iap.h \
  C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/error.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/FreeRTOS.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\Example\inc/FreeRTOSConfig.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/projdefs.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/portable.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/deprecated_definitions.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/portmacro.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/mpu_wrappers.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/task.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/list.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/semphr.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/queue.h \
- C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/queue.h
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/FreeRTOS.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/FreeRTOSConfig.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/projdefs.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/portable.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/deprecated_definitions.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/portmacro.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/mpu_wrappers.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/task.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/list.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/semphr.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/queue.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/queue.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/fat32.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/stdutils.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/spi.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/stdutils.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/delay.h \
+ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/sdcard.h
 
 C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/chip.h:
 
@@ -123,26 +129,38 @@ C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/
 
 C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\lpc_chip_175x_6x\inc/error.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/FreeRTOS.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/FreeRTOS.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\Example\inc/FreeRTOSConfig.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/FreeRTOSConfig.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/projdefs.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/projdefs.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/portable.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/portable.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/deprecated_definitions.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/deprecated_definitions.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/portmacro.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/portmacro.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/mpu_wrappers.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/mpu_wrappers.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/task.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/task.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/list.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/list.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/semphr.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/semphr.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/queue.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/queue.h:
 
-C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PulsadoresLedPWM\freeRTOS\inc/queue.h:
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\freeRTOS\inc/queue.h:
+
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/fat32.h:
+
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/stdutils.h:
+
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/spi.h:
+
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/stdutils.h:
+
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/delay.h:
+
+C:\Users\Fede\Documents\MCUXpressoIDE_10.1.1_606\workspace\PruebaSD\Example\inc/sdcard.h:
