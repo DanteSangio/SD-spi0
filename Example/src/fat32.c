@@ -30,7 +30,7 @@ http://www.tavi.co.uk/phobos/fat.html
 #include "sdcard.h"
 
 
-#define DEBUGOUT(...) printf(__VA_ARGS__)
+#define DEBUGOUT(...) //printf(__VA_ARGS__)
 
 /***************************************************************************************
                            Global Variables

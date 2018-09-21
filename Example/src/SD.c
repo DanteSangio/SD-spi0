@@ -16,6 +16,7 @@
 #include "semphr.h"
 #include "queue.h"
 #include <cr_section_macros.h>
+#include <stdlib.h>
 
 //SD
 #include "fat32.h"
@@ -34,7 +35,7 @@
 #define ON			((uint8_t) 1)
 #define OFF			((uint8_t) 0)
 */
-#define DEBUGOUT(...) printf(__VA_ARGS__)
+#define DEBUGOUT(...) //printf(__VA_ARGS__)
 
 #define LED_STICK	PORT(0),PIN(22)
 
@@ -48,9 +49,43 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Variables globales
+/*****************************************************************************
+ * Public types/enumerations/variables
+ ****************************************************************************/
+
+SemaphoreHandle_t Semaforo_RTC;
 
 QueueHandle_t Cola_SD;
+
+
+/*****************************************************************************
+ * Private types/enumerations/variables
+ ****************************************************************************/
+
+static volatile bool fIntervalReached;
+static volatile bool fAlarmTimeMatched;
+static volatile bool On0, On1;
+
+
+
+/*****************************************************************************
+ * Private functions
+ ****************************************************************************/
+
+/* Gets and shows the current time and date */
+static void showTime(RTC_TIME_T *pTime)
+{
+	DEBUGOUT("Time: %.2d:%.2d %.2d/%.2d/%.4d\r\n",
+			 pTime->time[RTC_TIMETYPE_HOUR],
+			 pTime->time[RTC_TIMETYPE_MINUTE],
+			 pTime->time[RTC_TIMETYPE_DAYOFMONTH],
+			 pTime->time[RTC_TIMETYPE_MONTH],
+			 pTime->time[RTC_TIMETYPE_YEAR]);
+}
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* uC_StartUp */
@@ -142,6 +177,92 @@ static void xTaskWriteSD(void *pvParameters)
 }
 
 
+/**
+ * @brief	RTC interrupt handler
+ * @return	Nothing
+ */
+void RTC_IRQHandler(void)
+{
+
+	BaseType_t Testigo=pdFALSE;
+
+	/* Interrupcion cada 1 minuto */
+	if (Chip_RTC_GetIntPending(LPC_RTC, RTC_INT_COUNTER_INCREASE)) {
+		/* Clear pending interrupt */
+		Chip_RTC_ClearIntPending(LPC_RTC, RTC_INT_COUNTER_INCREASE);
+		xSemaphoreGiveFromISR(Semaforo_RTC, &Testigo);	//Devuelve si una de las tareas bloqueadas tiene mayor prioridad que la actual
+		portYIELD_FROM_ISR(Testigo);					//Si testigo es TRUE -> ejecuta el scheduler
+
+	}
+}
+
+static void xTaskRTConfig(void *pvParameters)
+{
+	RTC_TIME_T FullTime;
+
+	SystemCoreClockUpdate();
+
+	DEBUGOUT("PRUEBA RTC..\n");	//Imprimo en la consola
+
+	Chip_RTC_Init(LPC_RTC);
+
+	/* Set current time for RTC 2:00:00PM, 2012-10-05 */
+
+	FullTime.time[RTC_TIMETYPE_SECOND]  = 0;
+	FullTime.time[RTC_TIMETYPE_MINUTE]  = 41;
+	FullTime.time[RTC_TIMETYPE_HOUR]    = 17;
+	FullTime.time[RTC_TIMETYPE_DAYOFMONTH]  = 21;
+	FullTime.time[RTC_TIMETYPE_DAYOFWEEK]   = 5;
+	FullTime.time[RTC_TIMETYPE_DAYOFYEAR]   = 207;
+	FullTime.time[RTC_TIMETYPE_MONTH]   = 9;
+	FullTime.time[RTC_TIMETYPE_YEAR]    = 2018;
+
+	Chip_RTC_SetFullTime(LPC_RTC, &FullTime);
+	//*/
+
+	/* Set the RTC to generate an interrupt on each second */
+	Chip_RTC_CntIncrIntConfig(LPC_RTC, RTC_AMR_CIIR_IMSEC, ENABLE);
+
+	/* Clear interrupt pending */
+	Chip_RTC_ClearIntPending(LPC_RTC, RTC_INT_COUNTER_INCREASE);
+
+	/* Enable RTC interrupt in NVIC */
+	NVIC_EnableIRQ((IRQn_Type) RTC_IRQn);
+
+	/* Enable RTC (starts increase the tick counter and second counter register) */
+	Chip_RTC_Enable(LPC_RTC, ENABLE);
+
+//
+	vTaskDelete(NULL);	//Borra la tarea
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* vTaskInicTimer */
+static void vTaskRTC(void *pvParameters)
+{
+	RTC_TIME_T FullTime;
+	char sec[2],min[2],hora[10],puntos[]=":",coma[]=",";
+	while (1)
+	{
+		xSemaphoreTake(Semaforo_RTC, portMAX_DELAY);
+		Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
+		//showTime(&FullTime);
+
+		itoa(FullTime.time[RTC_TIMETYPE_SECOND],sec,10);
+		itoa(FullTime.time[RTC_TIMETYPE_MINUTE],min,10);
+		itoa(FullTime.time[RTC_TIMETYPE_HOUR],hora,10);
+		strcat(hora,puntos);
+		strcat(hora,min);
+		strcat(hora,puntos);
+		strcat(hora,sec);
+		strcat(hora,coma);
+		xQueueSendToBack(Cola_SD, hora, portMAX_DELAY);
+
+	}
+	vTaskDelete(NULL);	//Borra la tarea si sale del while
+}
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* main
@@ -154,20 +275,25 @@ int main(void)
 
 
 	Cola_SD = xQueueCreate(4, sizeof(char) * 100);	//Creamos una cola para mandar una trama completa
+	vSemaphoreCreateBinary(Semaforo_RTC);			//Creamos el semaforo
 
 	//Creamos las tareas
-
+/*
 	xTaskCreate(xTaskPruebaSD, (char *) "xTaskPruebaSD",
 				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
-				(xTaskHandle *) NULL);
+				(xTaskHandle *) NULL);*/
 	xTaskCreate(xTaskWriteSD, (char *) "xTaskWriteSD",
 				configMINIMAL_STACK_SIZE * 2, NULL, (tskIDLE_PRIORITY + 2UL),
 				(xTaskHandle *) NULL);
 	xTaskCreate(vTaskInicSD, (char *) "vTaskInicSD",
 				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 3UL),
 				(xTaskHandle *) NULL);
-
-
+	xTaskCreate(vTaskRTC, (char *) "vTaskRTC",
+				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
+				(xTaskHandle *) NULL);
+	xTaskCreate(xTaskRTConfig, (char *) "xTaskRTConfig",
+				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 3UL),
+				(xTaskHandle *) NULL);
 	/* Start the scheduler */
 	vTaskStartScheduler();
 
