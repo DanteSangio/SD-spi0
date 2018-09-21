@@ -732,8 +732,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./Example/src/fat32.o
  .data          0x00000000        0x0 ./Example/src/fat32.o
  .bss           0x00000000        0x0 ./Example/src/fat32.o
- .text.FILE_Close
-                0x00000000       0x20 ./Example/src/fat32.o
  .text.FILE_Delete
                 0x00000000       0xc0 ./Example/src/fat32.o
  .text.FILE_GetCh
@@ -1620,7 +1618,7 @@ END GROUP
                 0x20084000                __top_RamAHB32 = 0x20084000
                 0x20084000                __top_RAM2 = 0x20084000
 
-.text           0x00000000     0x6674
+.text           0x00000000     0x64e4
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -1629,16 +1627,16 @@ END GROUP
                 0x000000cc                . = ALIGN (0x4)
                 0x000000cc                __section_table_start = .
                 0x000000cc                __data_section_table = .
-                0x000000cc        0x4 LONG 0x6674 LOADADDR (.data)
+                0x000000cc        0x4 LONG 0x64e4 LOADADDR (.data)
                 0x000000d0        0x4 LONG 0x10000000 ADDR (.data)
                 0x000000d4        0x4 LONG 0x4 SIZEOF (.data)
-                0x000000d8        0x4 LONG 0x6674 LOADADDR (.data_RAM2)
+                0x000000d8        0x4 LONG 0x64e4 LOADADDR (.data_RAM2)
                 0x000000dc        0x4 LONG 0x2007c000 ADDR (.data_RAM2)
                 0x000000e0        0x4 LONG 0x0 SIZEOF (.data_RAM2)
                 0x000000e4                __data_section_table_end = .
                 0x000000e4                __bss_section_table = .
                 0x000000e4        0x4 LONG 0x10000004 ADDR (.bss)
-                0x000000e8        0x4 LONG 0x9ac SIZEOF (.bss)
+                0x000000e8        0x4 LONG 0x9a4 SIZEOF (.bss)
                 0x000000ec        0x4 LONG 0x2007c000 ADDR (.bss_RAM2)
                 0x000000f0        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
                 0x000000f4                __bss_section_table_end = .
@@ -1856,377 +1854,377 @@ END GROUP
                 0x00001ce4       0x42 ./Example/src/SD.o
  .text.Chip_GPIO_SetDir
                 0x00001d26       0x34 ./Example/src/SD.o
- .text.Chip_GPIO_SetPinOutHigh
-                0x00001d5a       0x2c ./Example/src/SD.o
- .text.Chip_GPIO_SetPinOutLow
-                0x00001d86       0x2c ./Example/src/SD.o
- *fill*         0x00001db2        0x2 ff
+ *fill*         0x00001d5a        0x2 ff
  .text.uC_StartUp
-                0x00001db4      0x18c ./Example/src/SD.o
-                0x00001db4                uC_StartUp
+                0x00001d5c       0x38 ./Example/src/SD.o
+                0x00001d5c                uC_StartUp
  .text.xTaskPruebaSD
-                0x00001f40       0x6c ./Example/src/SD.o
+                0x00001d94       0x70 ./Example/src/SD.o
  .text.vTaskInicSD
-                0x00001fac       0x68 ./Example/src/SD.o
+                0x00001e04       0x68 ./Example/src/SD.o
  .text.xTaskWriteSD
-                0x00002014       0x78 ./Example/src/SD.o
- .text.main     0x0000208c       0xd4 ./Example/src/SD.o
-                0x0000208c                main
+                0x00001e6c       0xb8 ./Example/src/SD.o
+ .text.main     0x00001f24       0x88 ./Example/src/SD.o
+                0x00001f24                main
  .text.FILE_Open
-                0x00002160      0x2f4 ./Example/src/fat32.o
-                0x00002160                FILE_Open
+                0x00001fac      0x2f4 ./Example/src/fat32.o
+                0x00001fac                FILE_Open
+ .text.FILE_Close
+                0x000022a0       0x20 ./Example/src/fat32.o
+                0x000022a0                FILE_Close
  .text.FILE_PutCh
-                0x00002454      0x48c ./Example/src/fat32.o
-                0x00002454                FILE_PutCh
+                0x000022c0      0x48c ./Example/src/fat32.o
+                0x000022c0                FILE_PutCh
  .text.extract_DataBySize
-                0x000028e0       0x4a ./Example/src/fat32.o
-                0x000028e0                extract_DataBySize
- *fill*         0x0000292a        0x2 ff
+                0x0000274c       0x4a ./Example/src/fat32.o
+                0x0000274c                extract_DataBySize
+ *fill*         0x00002796        0x2 ff
  .text.getBootSectorData
-                0x0000292c      0x180 ./Example/src/fat32.o
-                0x0000292c                getBootSectorData
+                0x00002798      0x180 ./Example/src/fat32.o
+                0x00002798                getBootSectorData
  .text.getFirstSector
-                0x00002aac       0x2c ./Example/src/fat32.o
-                0x00002aac                getFirstSector
+                0x00002918       0x2c ./Example/src/fat32.o
+                0x00002918                getFirstSector
  .text.getSetNextCluster
-                0x00002ad8       0xa0 ./Example/src/fat32.o
-                0x00002ad8                getSetNextCluster
+                0x00002944       0xa0 ./Example/src/fat32.o
+                0x00002944                getSetNextCluster
  .text.getSetFreeCluster
-                0x00002b78       0xb0 ./Example/src/fat32.o
-                0x00002b78                getSetFreeCluster
+                0x000029e4       0xb0 ./Example/src/fat32.o
+                0x000029e4                getSetFreeCluster
  .text.searchNextFreeCluster
-                0x00002c28       0x9c ./Example/src/fat32.o
-                0x00002c28                searchNextFreeCluster
+                0x00002a94       0x9c ./Example/src/fat32.o
+                0x00002a94                searchNextFreeCluster
  .text.convertFileName
-                0x00002cc4      0x142 ./Example/src/fat32.o
-                0x00002cc4                convertFileName
- *fill*         0x00002e06        0x2 ff
+                0x00002b30      0x142 ./Example/src/fat32.o
+                0x00002b30                convertFileName
+ *fill*         0x00002c72        0x2 ff
  .text.openFile
-                0x00002e08      0x1a4 ./Example/src/fat32.o
-                0x00002e08                openFile
+                0x00002c74      0x1a4 ./Example/src/fat32.o
+                0x00002c74                openFile
  .text.freeMemoryUpdate
-                0x00002fac       0x88 ./Example/src/fat32.o
-                0x00002fac                freeMemoryUpdate
+                0x00002e18       0x88 ./Example/src/fat32.o
+                0x00002e18                freeMemoryUpdate
  .text.file_GetTime
-                0x00003034       0x4a ./Example/src/fat32.o
-                0x00003034                file_GetTime
+                0x00002ea0       0x4a ./Example/src/fat32.o
+                0x00002ea0                file_GetTime
  .text.file_GetDate
-                0x0000307e       0x4a ./Example/src/fat32.o
-                0x0000307e                file_GetDate
+                0x00002eea       0x4a ./Example/src/fat32.o
+                0x00002eea                file_GetDate
  .text.GPIO_PinFunction
-                0x000030c8       0x86 ./Example/src/gpio.o
-                0x000030c8                GPIO_PinFunction
+                0x00002f34       0x86 ./Example/src/gpio.o
+                0x00002f34                GPIO_PinFunction
  .text.GPIO_PinDirection
-                0x0000314e       0x6a ./Example/src/gpio.o
-                0x0000314e                GPIO_PinDirection
+                0x00002fba       0x6a ./Example/src/gpio.o
+                0x00002fba                GPIO_PinDirection
  .text.GPIO_PinWrite
-                0x000031b8       0x68 ./Example/src/gpio.o
-                0x000031b8                GPIO_PinWrite
- .text.SD_Init  0x00003220       0x44 ./Example/src/sdcard.o
-                0x00003220                SD_Init
+                0x00003024       0x68 ./Example/src/gpio.o
+                0x00003024                GPIO_PinWrite
+ .text.SD_Init  0x0000308c       0x44 ./Example/src/sdcard.o
+                0x0000308c                SD_Init
  .text.SD_sendCommand
-                0x00003264      0x10c ./Example/src/sdcard.o
-                0x00003264                SD_sendCommand
+                0x000030d0      0x10c ./Example/src/sdcard.o
+                0x000030d0                SD_sendCommand
  .text.SD_readSingleBlock
-                0x00003370       0x96 ./Example/src/sdcard.o
-                0x00003370                SD_readSingleBlock
+                0x000031dc       0x96 ./Example/src/sdcard.o
+                0x000031dc                SD_readSingleBlock
  .text.SD_writeSingleBlock
-                0x00003406       0xf0 ./Example/src/sdcard.o
-                0x00003406                SD_writeSingleBlock
- *fill*         0x000034f6        0x2 ff
+                0x00003272       0xf0 ./Example/src/sdcard.o
+                0x00003272                SD_writeSingleBlock
+ *fill*         0x00003362        0x2 ff
  .text.init_SdCard
-                0x000034f8      0x124 ./Example/src/sdcard.o
-                0x000034f8                init_SdCard
+                0x00003364      0x124 ./Example/src/sdcard.o
+                0x00003364                init_SdCard
  .text.SPI_Init
-                0x0000361c       0x9c ./Example/src/spi.o
-                0x0000361c                SPI_Init
+                0x00003488       0x9c ./Example/src/spi.o
+                0x00003488                SPI_Init
  .text.SPI_Write
-                0x000036b8       0x48 ./Example/src/spi.o
-                0x000036b8                SPI_Write
+                0x00003524       0x48 ./Example/src/spi.o
+                0x00003524                SPI_Write
  .text.SPI_Read
-                0x00003700       0x40 ./Example/src/spi.o
-                0x00003700                SPI_Read
+                0x0000356c       0x40 ./Example/src/spi.o
+                0x0000356c                SPI_Read
  .text.spi_GetPclk
-                0x00003740       0x6c ./Example/src/spi.o
+                0x000035ac       0x6c ./Example/src/spi.o
  .text.SystemInit
-                0x000037ac       0x24 ./Example/src/sysinit.o
-                0x000037ac                SystemInit
+                0x00003618       0x24 ./Example/src/sysinit.o
+                0x00003618                SystemInit
  .text.SystemCoreClockUpdate
-                0x000037d0       0x18 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
-                0x000037d0                SystemCoreClockUpdate
+                0x0000363c       0x18 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x0000363c                SystemCoreClockUpdate
  .text.Chip_Clock_IsMainPLLEnabled
-                0x000037e8       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003654       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLConnected
-                0x0000380c       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003678       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_FeedPLL
-                0x00003830       0x34 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000369c       0x34 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainPLLSource
-                0x00003864       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000036d0       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainOscRate
-                0x00003884       0x14 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000036f0       0x14 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetIntOscRate
-                0x00003898       0x14 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003704       0x14 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetRTCOscRate
-                0x000038ac       0x14 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003718       0x14 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .text.Chip_Clock_GetMainPLLInClockRate
-                0x000038c0        0xe D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- *fill*         0x000038ce        0x2 ff
+                0x0000372c        0xe D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ *fill*         0x0000373a        0x2 ff
  .text.Chip_Clock_EnablePLL
-                0x000038d0       0x44 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000038d0                Chip_Clock_EnablePLL
+                0x0000373c       0x44 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000373c                Chip_Clock_EnablePLL
  .text.Chip_Clock_DisablePLL
-                0x00003914       0x48 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00003914                Chip_Clock_DisablePLL
+                0x00003780       0x48 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003780                Chip_Clock_DisablePLL
  .text.Chip_Clock_SetupPLL
-                0x0000395c       0x5c D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x0000395c                Chip_Clock_SetupPLL
+                0x000037c8       0x5c D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000037c8                Chip_Clock_SetupPLL
  .text.Chip_Clock_EnablePeriphClock
-                0x000039b8       0x34 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000039b8                Chip_Clock_EnablePeriphClock
+                0x00003824       0x34 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003824                Chip_Clock_EnablePeriphClock
  .text.Chip_Clock_GetCPUClockSource
-                0x000039ec       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x000039ec                Chip_Clock_GetCPUClockSource
+                0x00003858       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003858                Chip_Clock_GetCPUClockSource
  .text.Chip_Clock_SetCPUClockDiv
-                0x00003a10       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00003a10                Chip_Clock_SetCPUClockDiv
+                0x0000387c       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000387c                Chip_Clock_SetCPUClockDiv
  .text.Chip_Clock_GetCPUClockDiv
-                0x00003a30       0x1c D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00003a30                Chip_Clock_GetCPUClockDiv
+                0x0000389c       0x1c D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x0000389c                Chip_Clock_GetCPUClockDiv
  .text.Chip_Clock_GetSYSCLKRate
-                0x00003a4c       0x34 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00003a4c                Chip_Clock_GetSYSCLKRate
+                0x000038b8       0x34 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000038b8                Chip_Clock_GetSYSCLKRate
  .text.Chip_Clock_GetMainPLLOutClockRate
-                0x00003a80       0x54 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00003a80                Chip_Clock_GetMainPLLOutClockRate
+                0x000038ec       0x54 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000038ec                Chip_Clock_GetMainPLLOutClockRate
  .text.Chip_Clock_GetMainClockRate
-                0x00003ad4       0x28 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00003ad4                Chip_Clock_GetMainClockRate
+                0x00003940       0x28 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003940                Chip_Clock_GetMainClockRate
  .text.Chip_Clock_GetSystemClockRate
-                0x00003afc       0x18 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
-                0x00003afc                Chip_Clock_GetSystemClockRate
+                0x00003968       0x18 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x00003968                Chip_Clock_GetSystemClockRate
  .text.Chip_IOCON_PinMux
-                0x00003b14       0x92 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
-                0x00003b14                Chip_IOCON_PinMux
- *fill*         0x00003ba6        0x2 ff
+                0x00003980       0x92 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x00003980                Chip_IOCON_PinMux
+ *fill*         0x00003a12        0x2 ff
  .text.Chip_Clock_IsMainPLLEnabled
-                0x00003ba8       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00003a14       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLLocked
-                0x00003bcc       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00003a38       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsMainPLLConnected
-                0x00003bf0       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00003a5c       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_EnableCrystal
-                0x00003c14       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00003a80       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_IsCrystalEnabled
-                0x00003c34       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00003aa0       0x24 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_Clock_SetMainPLLSource
-                0x00003c58       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00003ac4       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
  .text.Chip_SetupXtalClocking
-                0x00003c78       0x90 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
-                0x00003c78                Chip_SetupXtalClocking
+                0x00003ae4       0x90 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00003ae4                Chip_SetupXtalClocking
  .text.Chip_SystemInit
-                0x00003d08        0xc D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
-                0x00003d08                Chip_SystemInit
- .text.__main   0x00003d14        0xe c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(_cr__main.o)
-                0x00003d14                __CR_SEMIHOST
-                0x00003d14                __main
- .text.memcpy   0x00003d22        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(memcpy.o)
-                0x00003d22                memcpy
- .text.memset   0x00003d26        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(memset.o)
-                0x00003d26                memset
- *fill*         0x00003d2a        0x2 ff
- .text.malloc   0x00003d2c       0xc4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(alloc.o)
-                0x00003d2c                malloc
- .text.free     0x00003df0       0x30 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(alloc.o)
-                0x00003df0                free
+                0x00003b74        0xc D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00003b74                Chip_SystemInit
+ .text.__main   0x00003b80        0xe c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(_cr__main.o)
+                0x00003b80                __CR_SEMIHOST
+                0x00003b80                __main
+ .text.memcpy   0x00003b8e        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(memcpy.o)
+                0x00003b8e                memcpy
+ .text.memset   0x00003b92        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(memset.o)
+                0x00003b92                memset
+ *fill*         0x00003b96        0x2 ff
+ .text.malloc   0x00003b98       0xc4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(alloc.o)
+                0x00003b98                malloc
+ .text.free     0x00003c5c       0x30 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(alloc.o)
+                0x00003c5c                free
  .text._Csys_alloc
-                0x00003e20       0x20 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(alloc.o)
-                0x00003e20                _Csys_alloc
+                0x00003c8c       0x20 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(alloc.o)
+                0x00003c8c                _Csys_alloc
  .text.fp_round
-                0x00003e40       0x4c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
+                0x00003cac       0x4c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
  .text.pr_dec.constprop.1
-                0x00003e8c       0x26 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
- *fill*         0x00003eb2        0x2 ff
- .text.sprintf  0x00003eb4       0x6c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
-                0x00003eb4                sprintf
+                0x00003cf8       0x26 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
+ *fill*         0x00003d1e        0x2 ff
+ .text.sprintf  0x00003d20       0x6c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
+                0x00003d20                sprintf
+ *fill*         0x00003d8c        0x4 ff
  .text.fp_display
-                0x00003f20      0x95c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
+                0x00003d90      0x95c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
  .text.vsnprintf
-                0x0000487c       0x5c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
-                0x0000487c                vsnprintf
- .text.printf   0x000048d8       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
-                0x000048d8                printf
- .text._initio  0x0000492c       0x78 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(initio.o)
-                0x0000492c                _initio
+                0x000046ec       0x5c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
+                0x000046ec                vsnprintf
+ .text.printf   0x00004748       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
+                0x00004748                printf
+ .text._initio  0x0000479c       0x78 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(initio.o)
+                0x0000479c                _initio
  .text.__vfprintf
-                0x000049a4      0xb68 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(printf.o)
-                0x000049a4                __vfprintf
- .text.setvbuf  0x0000550c       0x40 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(setvbuf.o)
-                0x0000550c                setvbuf
- .text.strcpy   0x0000554c       0x42 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(strcpy.o)
-                0x0000554c                strcpy
- .text.strlen   0x0000558e       0x4a c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(strlen.o)
-                0x0000558e                strlen
- .text._sbrk    0x000055d8       0x3c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_cr_sbrk.o)
-                0x000055d8                _sbrk
+                0x00004814      0xb68 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(printf.o)
+                0x00004814                __vfprintf
+ .text.setvbuf  0x0000537c       0x40 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(setvbuf.o)
+                0x0000537c                setvbuf
+ .text.strcpy   0x000053bc       0x42 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(strcpy.o)
+                0x000053bc                strcpy
+ .text.strlen   0x000053fe       0x4a c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(strlen.o)
+                0x000053fe                strlen
+ .text._sbrk    0x00005448       0x3c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_cr_sbrk.o)
+                0x00005448                _sbrk
  .text._deferredlazyseek
-                0x00005614       0x40 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_deferredlazyseek.o)
-                0x00005614                _deferredlazyseek
+                0x00005484       0x40 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_deferredlazyseek.o)
+                0x00005484                _deferredlazyseek
  .text.__flsbuf
-                0x00005654      0x148 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_deferredlazyseek.o)
-                0x00005654                __flsbuf
- .text._fdopen  0x0000579c       0x68 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_fdopen.o)
-                0x0000579c                _fdopen
- .text._fflush  0x00005804       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_fflush.o)
-                0x00005804                _fflush
- .text._frexpl  0x00005858       0x58 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_frexpl.o)
-                0x00005858                _frexpl
- .text._ldexpl  0x000058b0       0x4c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_ldexpl.o)
-                0x000058b0                _ldexpl
+                0x000054c4      0x148 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_deferredlazyseek.o)
+                0x000054c4                __flsbuf
+ .text._fdopen  0x0000560c       0x68 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_fdopen.o)
+                0x0000560c                _fdopen
+ .text._fflush  0x00005674       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_fflush.o)
+                0x00005674                _fflush
+ .text._frexpl  0x000056c8       0x58 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_frexpl.o)
+                0x000056c8                _frexpl
+ .text._ldexpl  0x00005720       0x4c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_ldexpl.o)
+                0x00005720                _ldexpl
  .text._Cwritebuf
-                0x000058fc       0x6c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_writebuf.o)
-                0x000058fc                _Cwritebuf
- .text.fclose   0x00005968       0x58 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fclose.o)
-                0x00005968                fclose
- .text.fflush   0x000059c0       0x44 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fflush.o)
-                0x000059c0                fflush
- .text.fseek    0x00005a04      0x100 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fseek.o)
-                0x00005a04                fseek
- .text.ftell    0x00005b04       0x48 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(ftell.o)
-                0x00005b04                ftell
- .text.remove   0x00005b4c       0x14 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(remove.o)
-                0x00005b4c                remove
+                0x0000576c       0x6c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_writebuf.o)
+                0x0000576c                _Cwritebuf
+ .text.fclose   0x000057d8       0x58 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fclose.o)
+                0x000057d8                fclose
+ .text.fflush   0x00005830       0x44 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fflush.o)
+                0x00005830                fflush
+ .text.fseek    0x00005874      0x100 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fseek.o)
+                0x00005874                fseek
+ .text.ftell    0x00005974       0x48 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(ftell.o)
+                0x00005974                ftell
+ .text.remove   0x000059bc       0x14 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(remove.o)
+                0x000059bc                remove
  .text.__check_heap_overflow
-                0x00005b60       0x18 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_cr_check_heap.o)
-                0x00005b60                __check_heap_overflow
+                0x000059d0       0x18 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_cr_check_heap.o)
+                0x000059d0                __check_heap_overflow
  .text._do_fflush
-                0x00005b78       0x40 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_do_fflush.o)
-                0x00005b78                _do_fflush
+                0x000059e8       0x40 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_do_fflush.o)
+                0x000059e8                _do_fflush
  .text.__aeabi_dmul
-                0x00005bb8      0x10c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x00005bb8                __aeabi_dmul
+                0x00005a28      0x10c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00005a28                __aeabi_dmul
  .text.__aeabi_ddiv
-                0x00005cc4      0x134 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x00005cc4                __aeabi_ddiv
+                0x00005b34      0x134 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00005b34                __aeabi_ddiv
  .text.__aeabi_dsub
-                0x00005df8      0x1dc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x00005df8                __aeabi_dsub
+                0x00005c68      0x1dc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00005c68                __aeabi_dsub
  .text.__aeabi_dadd
-                0x00005fd4      0x10c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x00005fd4                __aeabi_dadd
+                0x00005e44      0x10c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00005e44                __aeabi_dadd
  .text.__aeabi_d2iz
-                0x000060e0       0x40 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x000060e0                __aeabi_d2iz
+                0x00005f50       0x40 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00005f50                __aeabi_d2iz
  .text.__bhs_ui2d
-                0x00006120       0x46 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x00006120                __bhs_ui2d
+                0x00005f90       0x46 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00005f90                __bhs_ui2d
  .text.__aeabi_i2d
-                0x00006166       0x12 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x00006166                __aeabi_i2d
+                0x00005fd6       0x12 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00005fd6                __aeabi_i2d
  .text.__aeabi_dcmpeq
-                0x00006178       0x2c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x00006178                __aeabi_dcmpeq
+                0x00005fe8       0x2c c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00005fe8                __aeabi_dcmpeq
  .text.__aeabi_dcmplt
-                0x000061a4       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x000061a4                __aeabi_dcmplt
+                0x00006014       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00006014                __aeabi_dcmplt
  .text.__aeabi_dcmple
-                0x000061f8       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x000061f8                __aeabi_dcmple
+                0x00006068       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x00006068                __aeabi_dcmple
  .text.__aeabi_dcmpge
-                0x0000624c       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
-                0x0000624c                __aeabi_dcmpge
+                0x000060bc       0x54 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(double.o)
+                0x000060bc                __aeabi_dcmpge
  .text.__aeabi_memcpy
-                0x000062a0       0x34 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(memcpy.o)
-                0x000062a0                __aeabi_memcpy
-                0x000062aa                __aeabi_memcpy8
-                0x000062aa                __aeabi_memcpy4
+                0x00006110       0x34 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(memcpy.o)
+                0x00006110                __aeabi_memcpy
+                0x0000611a                __aeabi_memcpy8
+                0x0000611a                __aeabi_memcpy4
  .text.__aeabi_memset_lowlevel
-                0x000062d4       0x32 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(memcpy.o)
-                0x000062d4                __aeabi_lowlevel_memset
- *fill*         0x00006306        0x2 ff
+                0x00006144       0x32 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m\libcr_eabihelpers.a(memcpy.o)
+                0x00006144                __aeabi_lowlevel_memset
+ *fill*         0x00006176        0x2 ff
  .text.__sys_appexit
-                0x00006308        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_appexit.o)
-                0x00006308                __sys_appexit
-                0x00006308                __exit
+                0x00006178        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_appexit.o)
+                0x00006178                __sys_appexit
+                0x00006178                __exit
  .text.__sys_close
-                0x00006314        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_close.o)
-                0x00006314                __sys_close
+                0x00006184        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_close.o)
+                0x00006184                __sys_close
  .text.__sys_flen
-                0x00006320        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_flen.o)
-                0x00006320                __sys_flen
+                0x00006190        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_flen.o)
+                0x00006190                __sys_flen
  .text.__sys_istty
-                0x0000632c        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_istty.o)
-                0x0000632c                __sys_istty
+                0x0000619c        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_istty.o)
+                0x0000619c                __sys_istty
  .text.__sys_remove
-                0x00006338        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_remove.o)
-                0x00006338                __sys_remove
+                0x000061a8        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_remove.o)
+                0x000061a8                __sys_remove
  .text.__sys_seek
-                0x00006344        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_seek.o)
-                0x00006344                __sys_seek
+                0x000061b4        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_seek.o)
+                0x000061b4                __sys_seek
  .text.__sys_tmpnam
-                0x00006350        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_tmpnam.o)
-                0x00006350                __sys_tmpnam
+                0x000061c0        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_tmpnam.o)
+                0x000061c0                __sys_tmpnam
  .text.__sys_write
-                0x0000635c        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_write.o)
-                0x0000635c                __sys_write
+                0x000061cc        0xc c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_write.o)
+                0x000061cc                __sys_write
  *(.rodata .rodata.* .constdata .constdata.*)
- .rodata        0x00006368        0x5 ./freeRTOS/src/tasks.o
- *fill*         0x0000636d        0x3 ff
- .rodata        0x00006370       0xd4 ./Example/src/SD.o
- .rodata        0x00006444      0x192 ./Example/src/fat32.o
- *fill*         0x000065d6        0x2 ff
+ .rodata        0x000061d8        0x5 ./freeRTOS/src/tasks.o
+ *fill*         0x000061dd        0x3 ff
+ .rodata        0x000061e0       0xd8 ./Example/src/SD.o
+ .rodata        0x000062b8      0x192 ./Example/src/fat32.o
+ *fill*         0x0000644a        0x2 ff
  .rodata.OscRateIn
-                0x000065d8        0x4 ./Example/src/sysinit.o
-                0x000065d8                OscRateIn
+                0x0000644c        0x4 ./Example/src/sysinit.o
+                0x0000644c                OscRateIn
  .rodata.RTCOscRateIn
-                0x000065dc        0x4 ./Example/src/sysinit.o
-                0x000065dc                RTCOscRateIn
+                0x00006450        0x4 ./Example/src/sysinit.o
+                0x00006450                RTCOscRateIn
  .rodata._Csys_alloc.str1.1
-                0x000065e0       0x18 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(alloc.o)
+                0x00006454       0x18 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(alloc.o)
  .rodata.fp_display.str1.1
-                0x000065f8       0x34 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
+                0x0000646c       0x34 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(fpprintf.o)
                                  0x35 (size before relaxing)
  .rodata._initio.str1.1
-                0x0000662c        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(initio.o)
+                0x000064a0        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(initio.o)
  .rodata.__vfprintf.str1.1
-                0x00006630       0x31 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(printf.o)
+                0x000064a4       0x31 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(printf.o)
                                  0x38 (size before relaxing)
- *fill*         0x00006661        0x7 ff
+ *fill*         0x000064d5        0x3 ff
  .rodata.__huge_vall
-                0x00006668        0x8 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_hugeval.o)
-                0x00006668                __huge_vall
+                0x000064d8        0x8 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(_hugeval.o)
+                0x000064d8                __huge_vall
  .rodata.__num_Ciob_streams
-                0x00006670        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__ciob.o)
-                0x00006670                __num_Ciob_streams
-                0x00006674                . = ALIGN (0x4)
+                0x000064e0        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__ciob.o)
+                0x000064e0                __num_Ciob_streams
+                0x000064e4                . = ALIGN (0x4)
 
-.glue_7         0x00006674        0x0
- .glue_7        0x00006674        0x0 linker stubs
+.glue_7         0x000064e4        0x0
+ .glue_7        0x000064e4        0x0 linker stubs
 
-.glue_7t        0x00006674        0x0
- .glue_7t       0x00006674        0x0 linker stubs
+.glue_7t        0x000064e4        0x0
+ .glue_7t       0x000064e4        0x0 linker stubs
 
-.vfp11_veneer   0x00006674        0x0
- .vfp11_veneer  0x00006674        0x0 linker stubs
+.vfp11_veneer   0x000064e4        0x0
+ .vfp11_veneer  0x000064e4        0x0 linker stubs
 
-.v4_bx          0x00006674        0x0
- .v4_bx         0x00006674        0x0 linker stubs
+.v4_bx          0x000064e4        0x0
+ .v4_bx         0x000064e4        0x0 linker stubs
 
-.iplt           0x00006674        0x0
- .iplt          0x00006674        0x0 ./freeRTOS/src/FreeRTOSCommonHooks.o
+.iplt           0x000064e4        0x0
+ .iplt          0x000064e4        0x0 ./freeRTOS/src/FreeRTOSCommonHooks.o
 
-.rel.dyn        0x00006674        0x0
- .rel.iplt      0x00006674        0x0 ./freeRTOS/src/FreeRTOSCommonHooks.o
+.rel.dyn        0x000064e4        0x0
+ .rel.iplt      0x000064e4        0x0 ./freeRTOS/src/FreeRTOSCommonHooks.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00006674                __exidx_start = .
+                0x000064e4                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00006674                __exidx_end = .
-                0x00006674                _etext = .
+                0x000064e4                __exidx_end = .
+                0x000064e4                _etext = .
 
-.data_RAM2      0x2007c000        0x0 load address 0x00006674
+.data_RAM2      0x2007c000        0x0 load address 0x000064e4
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM2, .)
  *(.ramfunc.$RAM2)
@@ -2242,7 +2240,7 @@ END GROUP
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _end_uninit_RESERVED = .
 
-.data           0x10000000        0x4 load address 0x00006674
+.data           0x10000000        0x4 load address 0x000064e4
  FILL mask 0xff
                 0x10000000                _data = .
  *(vtable)
@@ -2253,7 +2251,7 @@ END GROUP
                 0x10000004                . = ALIGN (0x4)
                 0x10000004                _edata = .
 
-.igot.plt       0x10000004        0x0 load address 0x00006678
+.igot.plt       0x10000004        0x0 load address 0x000064e8
  .igot.plt      0x10000004        0x0 ./freeRTOS/src/FreeRTOSCommonHooks.o
 
 .bss_RAM2       0x2007c000        0x0
@@ -2263,7 +2261,7 @@ END GROUP
                 0x2007c000                . = ALIGN ((. != 0x0)?0x4:0x1)
                 [!provide]                PROVIDE (__end_bss_RAM2, .)
 
-.bss            0x10000004      0x9ac
+.bss            0x10000004      0x9a4
                 0x10000004                _bss = .
  *(.bss*)
  .bss.ulTimerCountsForOneTick
@@ -2315,65 +2313,60 @@ END GROUP
                 0x1000010c        0x4 ./freeRTOS/src/tasks.o
  .bss.uxSchedulerSuspended
                 0x10000110        0x4 ./freeRTOS/src/tasks.o
- .bss.Semaforo_1
-                0x10000114        0x4 ./Example/src/SD.o
-                0x10000114                Semaforo_1
- .bss.Cola_SD   0x10000118        0x4 ./Example/src/SD.o
-                0x10000118                Cola_SD
- .bss.Cola_2    0x1000011c        0x4 ./Example/src/SD.o
-                0x1000011c                Cola_2
+ .bss.Cola_SD   0x10000114        0x4 ./Example/src/SD.o
+                0x10000114                Cola_SD
  .bss.firstDataSector
-                0x10000120        0x4 ./Example/src/fat32.o
-                0x10000120                firstDataSector
+                0x10000118        0x4 ./Example/src/fat32.o
+                0x10000118                firstDataSector
  .bss.rootCluster
-                0x10000124        0x4 ./Example/src/fat32.o
-                0x10000124                rootCluster
+                0x1000011c        0x4 ./Example/src/fat32.o
+                0x1000011c                rootCluster
  .bss.totalClusters
-                0x10000128        0x4 ./Example/src/fat32.o
-                0x10000128                totalClusters
+                0x10000120        0x4 ./Example/src/fat32.o
+                0x10000120                totalClusters
  .bss.bytesPerSector
-                0x1000012c        0x2 ./Example/src/fat32.o
-                0x1000012c                bytesPerSector
+                0x10000124        0x2 ./Example/src/fat32.o
+                0x10000124                bytesPerSector
  .bss.sectorPerCluster
-                0x1000012e        0x2 ./Example/src/fat32.o
-                0x1000012e                sectorPerCluster
+                0x10000126        0x2 ./Example/src/fat32.o
+                0x10000126                sectorPerCluster
  .bss.reservedSectorCount
-                0x10000130        0x2 ./Example/src/fat32.o
-                0x10000130                reservedSectorCount
- *fill*         0x10000132        0x2 
+                0x10000128        0x2 ./Example/src/fat32.o
+                0x10000128                reservedSectorCount
+ *fill*         0x1000012a        0x2 
  .bss.unusedSectors
-                0x10000134        0x4 ./Example/src/fat32.o
-                0x10000134                unusedSectors
+                0x1000012c        0x4 ./Example/src/fat32.o
+                0x1000012c                unusedSectors
  .bss.freeClusterCountUpdated
-                0x10000138        0x1 ./Example/src/fat32.o
-                0x10000138                freeClusterCountUpdated
- *fill*         0x10000139        0x3 
+                0x10000130        0x1 ./Example/src/fat32.o
+                0x10000130                freeClusterCountUpdated
+ *fill*         0x10000131        0x3 
  .bss.fatMappingTable
-                0x1000013c      0x480 ./Example/src/fat32.o
-                0x1000013c                fatMappingTable
+                0x10000134      0x480 ./Example/src/fat32.o
+                0x10000134                fatMappingTable
  .bss.GlobalBuffer
-                0x100005bc      0x200 ./Example/src/fat32.o
-                0x100005bc                GlobalBuffer
+                0x100005b4      0x200 ./Example/src/fat32.o
+                0x100005b4                GlobalBuffer
  .bss.V_SdHighcapacityFlag_u8
-                0x100007bc        0x1 ./Example/src/sdcard.o
-                0x100007bc                V_SdHighcapacityFlag_u8
- .bss.dummy_u8  0x100007bd        0x1 ./Example/src/spi.o
-                0x100007bd                dummy_u8
- *fill*         0x100007be        0x2 
+                0x100007b4        0x1 ./Example/src/sdcard.o
+                0x100007b4                V_SdHighcapacityFlag_u8
+ .bss.dummy_u8  0x100007b5        0x1 ./Example/src/spi.o
+                0x100007b5                dummy_u8
+ *fill*         0x100007b6        0x2 
  .bss.__end_of_heap
-                0x100007c0        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(__init_alloc.o)
-                0x100007c0                __end_of_heap
- .bss.__heaps   0x100007c4        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(__init_alloc.o)
-                0x100007c4                __heaps
- .bss.errno     0x100007c8        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(errno.o)
-                0x100007c8                errno
- .bss.__Ciob    0x100007cc      0x1e0 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__ciob.o)
-                0x100007cc                __Ciob
+                0x100007b8        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(__init_alloc.o)
+                0x100007b8                __end_of_heap
+ .bss.__heaps   0x100007bc        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(__init_alloc.o)
+                0x100007bc                __heaps
+ .bss.errno     0x100007c0        0x4 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_c.a(errno.o)
+                0x100007c0                errno
+ .bss.__Ciob    0x100007c4      0x1e0 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__ciob.o)
+                0x100007c4                __Ciob
  *(COMMON)
- COMMON         0x100009ac        0x4 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
-                0x100009ac                SystemCoreClock
-                0x100009b0                . = ALIGN (0x4)
-                0x100009b0                _ebss = .
+ COMMON         0x100009a4        0x4 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x100009a4                SystemCoreClock
+                0x100009a8                . = ALIGN (0x4)
+                0x100009a8                _ebss = .
                 [!provide]                PROVIDE (end, .)
 
 .noinit_RAM2    0x2007c000        0x0
@@ -2381,58 +2374,58 @@ END GROUP
  *(.noinit.$RamAHB32*)
                 0x2007c000                . = ALIGN (0x4)
 
-.noinit         0x100009b0        0x0
-                0x100009b0                _noinit = .
+.noinit         0x100009a8        0x0
+                0x100009a8                _noinit = .
  *(.noinit*)
-                0x100009b0                . = ALIGN (0x4)
-                0x100009b0                _end_noinit = .
-                0x100009b0                PROVIDE (_pvHeapStart, DEFINED (__user_heap_base)?__user_heap_base:.)
+                0x100009a8                . = ALIGN (0x4)
+                0x100009a8                _end_noinit = .
+                0x100009a8                PROVIDE (_pvHeapStart, DEFINED (__user_heap_base)?__user_heap_base:.)
                 0x10008000                PROVIDE (_vStackTop, DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc32 - 0x0))
                 0xefff74de                PROVIDE (__valid_user_code_checksum, (0x0 - ((((((_vStackTop + (ResetISR + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
                 0x00000000                _image_start = LOADADDR (.text)
-                0x00006678                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x00006678                _image_size = (_image_end - _image_start)
+                0x000064e8                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x000064e8                _image_size = (_image_end - _image_start)
 OUTPUT(PruebaSD.axf elf32-littlearm)
 
-.debug_info     0x00000000     0x82bb
+.debug_info     0x00000000     0x8206
  .debug_info    0x00000000      0x25e ./freeRTOS/src/FreeRTOSCommonHooks.o
  .debug_info    0x0000025e      0x132 ./freeRTOS/src/heap_3.o
  .debug_info    0x00000390      0x2d6 ./freeRTOS/src/list.o
  .debug_info    0x00000666      0x3e7 ./freeRTOS/src/port.o
  .debug_info    0x00000a4d      0xf58 ./freeRTOS/src/queue.o
  .debug_info    0x000019a5     0x19ae ./freeRTOS/src/tasks.o
- .debug_info    0x00003353      0x8db ./Example/src/SD.o
- .debug_info    0x00003c2e      0x25c ./Example/src/cr_startup_lpc175x_6x.o
- .debug_info    0x00003e8a     0x1002 ./Example/src/fat32.o
- .debug_info    0x00004e8c      0xa7e ./Example/src/gpio.o
- .debug_info    0x0000590a      0x6f5 ./Example/src/sdcard.o
- .debug_info    0x00005fff      0x822 ./Example/src/spi.o
- .debug_info    0x00006821      0x200 ./Example/src/sysinit.o
- .debug_info    0x00006a21      0x55a D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_info    0x00006f7b      0xba2 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_info    0x00007b1d      0x325 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_info    0x00007e42      0x479 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_info    0x00003353      0x826 ./Example/src/SD.o
+ .debug_info    0x00003b79      0x25c ./Example/src/cr_startup_lpc175x_6x.o
+ .debug_info    0x00003dd5     0x1002 ./Example/src/fat32.o
+ .debug_info    0x00004dd7      0xa7e ./Example/src/gpio.o
+ .debug_info    0x00005855      0x6f5 ./Example/src/sdcard.o
+ .debug_info    0x00005f4a      0x822 ./Example/src/spi.o
+ .debug_info    0x0000676c      0x200 ./Example/src/sysinit.o
+ .debug_info    0x0000696c      0x55a D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_info    0x00006ec6      0xba2 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_info    0x00007a68      0x325 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_info    0x00007d8d      0x479 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_abbrev   0x00000000     0x1c93
+.debug_abbrev   0x00000000     0x1c5d
  .debug_abbrev  0x00000000      0x17b ./freeRTOS/src/FreeRTOSCommonHooks.o
  .debug_abbrev  0x0000017b       0xe2 ./freeRTOS/src/heap_3.o
  .debug_abbrev  0x0000025d      0x112 ./freeRTOS/src/list.o
  .debug_abbrev  0x0000036f      0x231 ./freeRTOS/src/port.o
  .debug_abbrev  0x000005a0      0x242 ./freeRTOS/src/queue.o
  .debug_abbrev  0x000007e2      0x2fc ./freeRTOS/src/tasks.o
- .debug_abbrev  0x00000ade      0x24b ./Example/src/SD.o
- .debug_abbrev  0x00000d29      0x114 ./Example/src/cr_startup_lpc175x_6x.o
- .debug_abbrev  0x00000e3d      0x22f ./Example/src/fat32.o
- .debug_abbrev  0x0000106c      0x13c ./Example/src/gpio.o
- .debug_abbrev  0x000011a8      0x165 ./Example/src/sdcard.o
- .debug_abbrev  0x0000130d      0x189 ./Example/src/spi.o
- .debug_abbrev  0x00001496       0xdb ./Example/src/sysinit.o
- .debug_abbrev  0x00001571      0x14d D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_abbrev  0x000016be      0x301 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_abbrev  0x000019bf      0x14a D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_abbrev  0x00001b09      0x18a D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_abbrev  0x00000ade      0x215 ./Example/src/SD.o
+ .debug_abbrev  0x00000cf3      0x114 ./Example/src/cr_startup_lpc175x_6x.o
+ .debug_abbrev  0x00000e07      0x22f ./Example/src/fat32.o
+ .debug_abbrev  0x00001036      0x13c ./Example/src/gpio.o
+ .debug_abbrev  0x00001172      0x165 ./Example/src/sdcard.o
+ .debug_abbrev  0x000012d7      0x189 ./Example/src/spi.o
+ .debug_abbrev  0x00001460       0xdb ./Example/src/sysinit.o
+ .debug_abbrev  0x0000153b      0x14d D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_abbrev  0x00001688      0x301 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_abbrev  0x00001989      0x14a D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_abbrev  0x00001ad3      0x18a D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_aranges  0x00000000      0x888
+.debug_aranges  0x00000000      0x878
  .debug_aranges
                 0x00000000       0x40 ./freeRTOS/src/FreeRTOSCommonHooks.o
  .debug_aranges
@@ -2446,48 +2439,48 @@ OUTPUT(PruebaSD.axf elf32-littlearm)
  .debug_aranges
                 0x00000230      0x1e8 ./freeRTOS/src/tasks.o
  .debug_aranges
-                0x00000418       0x78 ./Example/src/SD.o
+                0x00000418       0x68 ./Example/src/SD.o
  .debug_aranges
-                0x00000490       0x80 ./Example/src/cr_startup_lpc175x_6x.o
+                0x00000480       0x80 ./Example/src/cr_startup_lpc175x_6x.o
  .debug_aranges
-                0x00000510       0xb0 ./Example/src/fat32.o
+                0x00000500       0xb0 ./Example/src/fat32.o
  .debug_aranges
-                0x000005c0       0x40 ./Example/src/gpio.o
+                0x000005b0       0x40 ./Example/src/gpio.o
  .debug_aranges
-                0x00000600       0x48 ./Example/src/sdcard.o
+                0x000005f0       0x48 ./Example/src/sdcard.o
  .debug_aranges
-                0x00000648       0x38 ./Example/src/spi.o
+                0x00000638       0x38 ./Example/src/spi.o
  .debug_aranges
-                0x00000680       0x20 ./Example/src/sysinit.o
+                0x00000670       0x20 ./Example/src/sysinit.o
  .debug_aranges
-                0x000006a0       0x38 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+                0x00000690       0x38 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
  .debug_aranges
-                0x000006d8      0x120 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+                0x000006c8      0x120 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
  .debug_aranges
-                0x000007f8       0x30 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+                0x000007e8       0x30 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
  .debug_aranges
-                0x00000828       0x60 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+                0x00000818       0x60 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_ranges   0x00000000      0x778
+.debug_ranges   0x00000000      0x768
  .debug_ranges  0x00000000       0x30 ./freeRTOS/src/FreeRTOSCommonHooks.o
  .debug_ranges  0x00000030       0x18 ./freeRTOS/src/heap_3.o
  .debug_ranges  0x00000048       0x30 ./freeRTOS/src/list.o
  .debug_ranges  0x00000078       0x68 ./freeRTOS/src/port.o
  .debug_ranges  0x000000e0      0x100 ./freeRTOS/src/queue.o
  .debug_ranges  0x000001e0      0x1d8 ./freeRTOS/src/tasks.o
- .debug_ranges  0x000003b8       0x68 ./Example/src/SD.o
- .debug_ranges  0x00000420       0x70 ./Example/src/cr_startup_lpc175x_6x.o
- .debug_ranges  0x00000490       0xa0 ./Example/src/fat32.o
- .debug_ranges  0x00000530       0x30 ./Example/src/gpio.o
- .debug_ranges  0x00000560       0x38 ./Example/src/sdcard.o
- .debug_ranges  0x00000598       0x28 ./Example/src/spi.o
- .debug_ranges  0x000005c0       0x10 ./Example/src/sysinit.o
- .debug_ranges  0x000005d0       0x28 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_ranges  0x000005f8      0x110 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_ranges  0x00000708       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_ranges  0x00000728       0x50 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_ranges  0x000003b8       0x58 ./Example/src/SD.o
+ .debug_ranges  0x00000410       0x70 ./Example/src/cr_startup_lpc175x_6x.o
+ .debug_ranges  0x00000480       0xa0 ./Example/src/fat32.o
+ .debug_ranges  0x00000520       0x30 ./Example/src/gpio.o
+ .debug_ranges  0x00000550       0x38 ./Example/src/sdcard.o
+ .debug_ranges  0x00000588       0x28 ./Example/src/spi.o
+ .debug_ranges  0x000005b0       0x10 ./Example/src/sysinit.o
+ .debug_ranges  0x000005c0       0x28 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_ranges  0x000005e8      0x110 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_ranges  0x000006f8       0x20 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_ranges  0x00000718       0x50 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_macro    0x00000000     0x71c8
+.debug_macro    0x00000000     0x7084
  .debug_macro   0x00000000      0x24f ./freeRTOS/src/FreeRTOSCommonHooks.o
  .debug_macro   0x0000024f      0x8d4 ./freeRTOS/src/FreeRTOSCommonHooks.o
  .debug_macro   0x00000b23       0x10 ./freeRTOS/src/FreeRTOSCommonHooks.o
@@ -2540,57 +2533,57 @@ OUTPUT(PruebaSD.axf elf32-littlearm)
  .debug_macro   0x0000466b       0x94 ./freeRTOS/src/queue.o
  .debug_macro   0x000046ff      0x185 ./freeRTOS/src/tasks.o
  .debug_macro   0x00004884       0x11 ./freeRTOS/src/tasks.o
- .debug_macro   0x00004895      0x422 ./Example/src/SD.o
- .debug_macro   0x00004cb7       0x7b ./Example/src/SD.o
- .debug_macro   0x00004d32       0x18 ./Example/src/SD.o
- .debug_macro   0x00004d4a       0x10 ./Example/src/SD.o
- .debug_macro   0x00004d5a       0xe8 ./Example/src/SD.o
- .debug_macro   0x00004e42       0x78 ./Example/src/SD.o
- .debug_macro   0x00004eba       0x82 ./Example/src/SD.o
- .debug_macro   0x00004f3c      0x21d ./Example/src/SD.o
- .debug_macro   0x00005159      0x12a ./Example/src/SD.o
- .debug_macro   0x00005283       0x5e ./Example/src/SD.o
- .debug_macro   0x000052e1       0xb2 ./Example/src/SD.o
- .debug_macro   0x00005393       0x1d ./Example/src/cr_startup_lpc175x_6x.o
- .debug_macro   0x000053b0       0xd4 ./Example/src/fat32.o
- .debug_macro   0x00005484      0x217 ./Example/src/fat32.o
- .debug_macro   0x0000569b       0x22 ./Example/src/fat32.o
- .debug_macro   0x000056bd      0x170 ./Example/src/fat32.o
- .debug_macro   0x0000582d       0x94 ./Example/src/gpio.o
- .debug_macro   0x000058c1      0x224 ./Example/src/gpio.o
- .debug_macro   0x00005ae5       0x1c ./Example/src/gpio.o
- .debug_macro   0x00005b01       0xc5 ./Example/src/sdcard.o
- .debug_macro   0x00005bc6      0x21e ./Example/src/sdcard.o
- .debug_macro   0x00005de4       0x58 ./Example/src/sdcard.o
- .debug_macro   0x00005e3c      0x130 ./Example/src/sdcard.o
- .debug_macro   0x00005f6c       0x99 ./Example/src/spi.o
- .debug_macro   0x00006005      0x1cd ./Example/src/sysinit.o
- .debug_macro   0x000061d2      0x1cd D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_macro   0x0000639f      0x8c2 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_macro   0x00006c61      0x1cd D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_macro   0x00006e2e      0x1cd D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_macro   0x00006ffb      0x1cd D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_macro   0x00004895      0x2de ./Example/src/SD.o
+ .debug_macro   0x00004b73       0x7b ./Example/src/SD.o
+ .debug_macro   0x00004bee       0x18 ./Example/src/SD.o
+ .debug_macro   0x00004c06       0x10 ./Example/src/SD.o
+ .debug_macro   0x00004c16       0xe8 ./Example/src/SD.o
+ .debug_macro   0x00004cfe       0x78 ./Example/src/SD.o
+ .debug_macro   0x00004d76       0x82 ./Example/src/SD.o
+ .debug_macro   0x00004df8      0x21d ./Example/src/SD.o
+ .debug_macro   0x00005015      0x12a ./Example/src/SD.o
+ .debug_macro   0x0000513f       0x5e ./Example/src/SD.o
+ .debug_macro   0x0000519d       0xb2 ./Example/src/SD.o
+ .debug_macro   0x0000524f       0x1d ./Example/src/cr_startup_lpc175x_6x.o
+ .debug_macro   0x0000526c       0xd4 ./Example/src/fat32.o
+ .debug_macro   0x00005340      0x217 ./Example/src/fat32.o
+ .debug_macro   0x00005557       0x22 ./Example/src/fat32.o
+ .debug_macro   0x00005579      0x170 ./Example/src/fat32.o
+ .debug_macro   0x000056e9       0x94 ./Example/src/gpio.o
+ .debug_macro   0x0000577d      0x224 ./Example/src/gpio.o
+ .debug_macro   0x000059a1       0x1c ./Example/src/gpio.o
+ .debug_macro   0x000059bd       0xc5 ./Example/src/sdcard.o
+ .debug_macro   0x00005a82      0x21e ./Example/src/sdcard.o
+ .debug_macro   0x00005ca0       0x58 ./Example/src/sdcard.o
+ .debug_macro   0x00005cf8      0x130 ./Example/src/sdcard.o
+ .debug_macro   0x00005e28       0x99 ./Example/src/spi.o
+ .debug_macro   0x00005ec1      0x1cd ./Example/src/sysinit.o
+ .debug_macro   0x0000608e      0x1cd D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_macro   0x0000625b      0x8c2 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_macro   0x00006b1d      0x1cd D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_macro   0x00006cea      0x1cd D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_macro   0x00006eb7      0x1cd D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_line     0x00000000     0x4d18
+.debug_line     0x00000000     0x4ce9
  .debug_line    0x00000000      0x576 ./freeRTOS/src/FreeRTOSCommonHooks.o
  .debug_line    0x00000576      0x213 ./freeRTOS/src/heap_3.o
  .debug_line    0x00000789      0x261 ./freeRTOS/src/list.o
  .debug_line    0x000009ea      0x33a ./freeRTOS/src/port.o
  .debug_line    0x00000d24      0x659 ./freeRTOS/src/queue.o
  .debug_line    0x0000137d      0xba4 ./freeRTOS/src/tasks.o
- .debug_line    0x00001f21      0x6b2 ./Example/src/SD.o
- .debug_line    0x000025d3       0xdb ./Example/src/cr_startup_lpc175x_6x.o
- .debug_line    0x000026ae      0x6c4 ./Example/src/fat32.o
- .debug_line    0x00002d72      0x24d ./Example/src/gpio.o
- .debug_line    0x00002fbf      0x334 ./Example/src/sdcard.o
- .debug_line    0x000032f3      0x23b ./Example/src/spi.o
- .debug_line    0x0000352e      0x3fc ./Example/src/sysinit.o
- .debug_line    0x0000392a      0x444 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_line    0x00003d6e      0x6c0 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_line    0x0000442e      0x430 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_line    0x0000485e      0x4ba D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_line    0x00001f21      0x683 ./Example/src/SD.o
+ .debug_line    0x000025a4       0xdb ./Example/src/cr_startup_lpc175x_6x.o
+ .debug_line    0x0000267f      0x6c4 ./Example/src/fat32.o
+ .debug_line    0x00002d43      0x24d ./Example/src/gpio.o
+ .debug_line    0x00002f90      0x334 ./Example/src/sdcard.o
+ .debug_line    0x000032c4      0x23b ./Example/src/spi.o
+ .debug_line    0x000034ff      0x3fc ./Example/src/sysinit.o
+ .debug_line    0x000038fb      0x444 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_line    0x00003d3f      0x6c0 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_line    0x000043ff      0x430 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_line    0x0000482f      0x4ba D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
 
-.debug_str      0x00000000    0x1d068
+.debug_str      0x00000000    0x1cb13
  .debug_str     0x00000000    0x13a8e ./freeRTOS/src/FreeRTOSCommonHooks.o
                               0x13b8d (size before relaxing)
  .debug_str     0x00013a8e      0x103 ./freeRTOS/src/heap_3.o
@@ -2603,27 +2596,27 @@ OUTPUT(PruebaSD.axf elf32-littlearm)
                                0x8313 (size before relaxing)
  .debug_str     0x00015399     0x1b51 ./freeRTOS/src/tasks.o
                                0x9071 (size before relaxing)
- .debug_str     0x00016eea     0x290f ./Example/src/SD.o
-                              0x16bf2 (size before relaxing)
- .debug_str     0x000197f9      0x1b3 ./Example/src/cr_startup_lpc175x_6x.o
+ .debug_str     0x00016eea     0x23ba ./Example/src/SD.o
+                              0x1668b (size before relaxing)
+ .debug_str     0x000192a4      0x1b3 ./Example/src/cr_startup_lpc175x_6x.o
                                0x275b (size before relaxing)
- .debug_str     0x000199ac     0x220c ./Example/src/fat32.o
+ .debug_str     0x00019457     0x220c ./Example/src/fat32.o
                                0xb79a (size before relaxing)
- .debug_str     0x0001bbb8      0x67c ./Example/src/gpio.o
+ .debug_str     0x0001b663      0x67c ./Example/src/gpio.o
                                0xa70c (size before relaxing)
- .debug_str     0x0001c234       0xd2 ./Example/src/sdcard.o
+ .debug_str     0x0001bcdf       0xd2 ./Example/src/sdcard.o
                                0xb573 (size before relaxing)
- .debug_str     0x0001c306      0x1b7 ./Example/src/spi.o
+ .debug_str     0x0001bdb1      0x1b7 ./Example/src/spi.o
                                0xa6ed (size before relaxing)
- .debug_str     0x0001c4bd       0x23 ./Example/src/sysinit.o
+ .debug_str     0x0001bf68       0x23 ./Example/src/sysinit.o
                               0x1077d (size before relaxing)
- .debug_str     0x0001c4e0      0x1c9 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_str     0x0001bf8b      0x1c9 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
                               0x10b90 (size before relaxing)
- .debug_str     0x0001c6a9      0x857 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_str     0x0001c154      0x857 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
                               0x1120e (size before relaxing)
- .debug_str     0x0001cf00       0xa4 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_str     0x0001c9ab       0xa4 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
                               0x1068b (size before relaxing)
- .debug_str     0x0001cfa4       0xc4 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_str     0x0001ca4f       0xc4 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
                               0x10873 (size before relaxing)
 
 .comment        0x00000000       0x7f
@@ -2788,21 +2781,21 @@ OUTPUT(PruebaSD.axf elf32-littlearm)
  .ARM.attributes
                 0x00000a32       0x21 c:/nxp/mcuxpressoide_10.1.1_606/ide/tools/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libcr_semihost.a(__sys_write.o)
 
-.debug_frame    0x00000000     0x1fdc
+.debug_frame    0x00000000     0x1f8c
  .debug_frame   0x00000000       0xb4 ./freeRTOS/src/FreeRTOSCommonHooks.o
  .debug_frame   0x000000b4       0x58 ./freeRTOS/src/heap_3.o
  .debug_frame   0x0000010c       0xd8 ./freeRTOS/src/list.o
  .debug_frame   0x000001e4      0x178 ./freeRTOS/src/port.o
  .debug_frame   0x0000035c      0x498 ./freeRTOS/src/queue.o
  .debug_frame   0x000007f4      0x864 ./freeRTOS/src/tasks.o
- .debug_frame   0x00001058      0x1d0 ./Example/src/SD.o
- .debug_frame   0x00001228      0x170 ./Example/src/cr_startup_lpc175x_6x.o
- .debug_frame   0x00001398      0x2e0 ./Example/src/fat32.o
- .debug_frame   0x00001678       0xd8 ./Example/src/gpio.o
- .debug_frame   0x00001750       0xec ./Example/src/sdcard.o
- .debug_frame   0x0000183c       0xa8 ./Example/src/spi.o
- .debug_frame   0x000018e4       0x34 ./Example/src/sysinit.o
- .debug_frame   0x00001918       0x88 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
- .debug_frame   0x000019a0      0x490 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
- .debug_frame   0x00001e30       0x80 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
- .debug_frame   0x00001eb0      0x12c D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
+ .debug_frame   0x00001058      0x180 ./Example/src/SD.o
+ .debug_frame   0x000011d8      0x170 ./Example/src/cr_startup_lpc175x_6x.o
+ .debug_frame   0x00001348      0x2e0 ./Example/src/fat32.o
+ .debug_frame   0x00001628       0xd8 ./Example/src/gpio.o
+ .debug_frame   0x00001700       0xec ./Example/src/sdcard.o
+ .debug_frame   0x000017ec       0xa8 ./Example/src/spi.o
+ .debug_frame   0x00001894       0x34 ./Example/src/sysinit.o
+ .debug_frame   0x000018c8       0x88 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(chip_17xx_40xx.o)
+ .debug_frame   0x00001950      0x490 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(clock_17xx_40xx.o)
+ .debug_frame   0x00001de0       0x80 D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(iocon_17xx_40xx.o)
+ .debug_frame   0x00001e60      0x12c D:\Facultad\Digitales II\Repositorio MCU\lpc_chip_175x_6x\Debug\liblpc_chip_175x_6x.a(sysinit_17xx_40xx.o)
