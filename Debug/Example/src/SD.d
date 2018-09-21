@@ -1,15 +1,4 @@
-freeRTOS/src/FreeRTOSCommonHooks.o freeRTOS/src/FreeRTOSCommonHooks.d: \
- ../freeRTOS/src/FreeRTOSCommonHooks.c \
- C:\Users\kevin\git\SD-spi0\freeRTOS\inc/FreeRTOS.h \
- C:\Users\kevin\git\SD-spi0\Example\inc/FreeRTOSConfig.h \
- C:\Users\kevin\git\SD-spi0\freeRTOS\inc/projdefs.h \
- C:\Users\kevin\git\SD-spi0\freeRTOS\inc/portable.h \
- C:\Users\kevin\git\SD-spi0\freeRTOS\inc/deprecated_definitions.h \
- C:\Users\kevin\git\SD-spi0\freeRTOS\inc/portmacro.h \
- C:\Users\kevin\git\SD-spi0\freeRTOS\inc/mpu_wrappers.h \
- C:\Users\kevin\git\SD-spi0\freeRTOS\inc/task.h \
- C:\Users\kevin\git\SD-spi0\freeRTOS\inc/list.h \
- ../freeRTOS/src/FreeRTOSCommonHooks.h \
+Example/src/SD.o Example/src/SD.d: ../Example/src/SD.c \
  D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/chip.h \
  D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/lpc_types.h \
  D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/sys_config.h \
@@ -46,27 +35,25 @@ freeRTOS/src/FreeRTOSCommonHooks.o freeRTOS/src/FreeRTOSCommonHooks.d: \
  D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/fmc_17xx_40xx.h \
  D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/romapi_17xx_40xx.h \
  D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/iap.h \
- D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/error.h
-
-C:\Users\kevin\git\SD-spi0\freeRTOS\inc/FreeRTOS.h:
-
-C:\Users\kevin\git\SD-spi0\Example\inc/FreeRTOSConfig.h:
-
-C:\Users\kevin\git\SD-spi0\freeRTOS\inc/projdefs.h:
-
-C:\Users\kevin\git\SD-spi0\freeRTOS\inc/portable.h:
-
-C:\Users\kevin\git\SD-spi0\freeRTOS\inc/deprecated_definitions.h:
-
-C:\Users\kevin\git\SD-spi0\freeRTOS\inc/portmacro.h:
-
-C:\Users\kevin\git\SD-spi0\freeRTOS\inc/mpu_wrappers.h:
-
-C:\Users\kevin\git\SD-spi0\freeRTOS\inc/task.h:
-
-C:\Users\kevin\git\SD-spi0\freeRTOS\inc/list.h:
-
-../freeRTOS/src/FreeRTOSCommonHooks.h:
+ D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/error.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/FreeRTOS.h \
+ C:\Users\kevin\git\SD-spi0\Example\inc/FreeRTOSConfig.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/projdefs.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/portable.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/deprecated_definitions.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/portmacro.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/mpu_wrappers.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/task.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/list.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/semphr.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/queue.h \
+ C:\Users\kevin\git\SD-spi0\freeRTOS\inc/queue.h \
+ C:\Users\kevin\git\SD-spi0\Example\inc/fat32.h \
+ C:\Users\kevin\git\SD-spi0\Example\inc/stdutils.h \
+ C:\Users\kevin\git\SD-spi0\Example\inc/spi.h \
+ C:\Users\kevin\git\SD-spi0\Example\inc/stdutils.h \
+ C:\Users\kevin\git\SD-spi0\Example\inc/delay.h \
+ C:\Users\kevin\git\SD-spi0\Example\inc/sdcard.h
 
 D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/chip.h:
 
@@ -141,3 +128,39 @@ D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/romapi_17xx_40xx
 D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/iap.h:
 
 D:\Facultad\Digitales\ II\Repositorio\ MCU\lpc_chip_175x_6x\inc/error.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/FreeRTOS.h:
+
+C:\Users\kevin\git\SD-spi0\Example\inc/FreeRTOSConfig.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/projdefs.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/portable.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/deprecated_definitions.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/portmacro.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/mpu_wrappers.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/task.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/list.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/semphr.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/queue.h:
+
+C:\Users\kevin\git\SD-spi0\freeRTOS\inc/queue.h:
+
+C:\Users\kevin\git\SD-spi0\Example\inc/fat32.h:
+
+C:\Users\kevin\git\SD-spi0\Example\inc/stdutils.h:
+
+C:\Users\kevin\git\SD-spi0\Example\inc/spi.h:
+
+C:\Users\kevin\git\SD-spi0\Example\inc/stdutils.h:
+
+C:\Users\kevin\git\SD-spi0\Example\inc/delay.h:
+
+C:\Users\kevin\git\SD-spi0\Example\inc/sdcard.h:
